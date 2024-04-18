@@ -1,0 +1,29 @@
+[project]
+name = "app"
+version = "0.1.0"
+description = "Add your description here"
+authors = [{ name = "Pedro Gabriel", email = "pedro.planel@2gofintech.com.br" }]
+dependencies = [
+    "fastapi>=0.110.1",
+    "uvicorn[standard]>=0.29.0",
+    "opentelemetry-api>=1.24.0",
+    "opentelemetry-sdk>=1.24.0",
+    "opentelemetry-instrumentation-fastapi",
+    "opentelemetry-exporter-otlp-proto-grpc>=1.24.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/app"]
